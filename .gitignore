@@ -1,0 +1,48 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+*.so
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# ===== Backend artifacts (large/generated) =====
+backend/processed/
+backend/best_model.pth
+backend/__pycache__/
+
+# ===== Node / Frontend =====
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# ===== Data files (too large for git) =====
+data/gene_expression.tsv
+data/methylation.tsv
+data/clinical.tsv
+
+# ===== IDE / OS =====
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== Env files =====
+.env
+.env.local
+.env.*.local
+
+# ===== Logs =====
+*.log
+npm-debug.log*
