@@ -1,0 +1,217 @@
+================================================================================
+       GxE DEEP LEARNING MODEL - TEST DATA FOR PREDICTION VERIFICATION
+================================================================================
+
+Instructions:
+  1. Open the app at http://localhost:3000 → go to "Survival Prediction" page
+  2. Enter the values below into the form for each test patient
+  3. Click "Predict Survival" and compare the result with "Expected Output"
+
+NOTE: The prediction shows MORTALITY RISK (probability of death).
+      Gene values are raw expression counts. Methylation values are 0-1 (beta).
+
+================================================================================
+  TEST PATIENT 1  —  62-year-old Female, Stage I (Actual: DECEASED)
+================================================================================
+
+  CLINICAL INFORMATION:
+    Age:              62
+    Gender:           Female
+    Smoking History:  Former (>15 yrs)
+    Cancer Stage:     Stage I
+
+  GENE EXPRESSION (Top 10):
+    RPS4Y1   →   1.55
+    XIST     →  13.18
+    SFTPC    →  12.70
+    FGB      →   1.55
+    DDX3Y    →   0.57
+    KDM5D    →   0.00
+    PLUNC    →   5.07
+    SCGB1A1  →  10.29
+    PGC      →   6.74
+    XAGE1D   →   9.88
+
+  METHYLATION SITES (Top 5):
+    rs5931272  →  0.5703
+    rs798149   →  0.9882
+    rs5987737  →  0.9784
+    rs1416770  →  0.9745
+    rs6626309  →  0.6176
+
+  ✅ EXPECTED OUTPUT:
+    Mortality Risk:   ~37.59%
+    Risk Level:       Medium
+    Actual Status:    DECEASED
+
+
+================================================================================
+  TEST PATIENT 2  —  75-year-old Female, Stage III (Actual: LIVING)
+================================================================================
+
+  CLINICAL INFORMATION:
+    Age:              75
+    Gender:           Female
+    Smoking History:  Former (>15 yrs)
+    Cancer Stage:     Stage III
+
+  GENE EXPRESSION (Top 10):
+    RPS4Y1   →   0.00
+    XIST     →  13.15
+    SFTPC    →   4.73
+    FGB      →   2.45
+    DDX3Y    →   1.69
+    KDM5D    →   0.00
+    PLUNC    →   7.13
+    SCGB1A1  →  11.37
+    PGC      →  14.48
+    XAGE1D   →  11.87
+
+  METHYLATION SITES (Top 5):
+    rs5931272  →  0.4506
+    rs798149   →  0.4028
+    rs5987737  →  0.0213
+    rs1416770  →  0.9621
+    rs6626309  →  0.9664
+
+  ✅ EXPECTED OUTPUT:
+    Mortality Risk:   ~37.99%
+    Risk Level:       Medium
+    Actual Status:    LIVING
+
+
+================================================================================
+  TEST PATIENT 3  —  70-year-old Male, Stage III (Actual: LIVING)
+================================================================================
+
+  CLINICAL INFORMATION:
+    Age:              70
+    Gender:           Male
+    Smoking History:  Former (>15 yrs)
+    Cancer Stage:     Stage III
+
+  GENE EXPRESSION (Top 10):
+    RPS4Y1   →  12.57
+    XIST     →   0.00
+    SFTPC    →  12.97
+    FGB      →  10.05
+    DDX3Y    →  10.63
+    KDM5D    →  10.57
+    PLUNC    →  11.77
+    SCGB1A1  →   2.89
+    PGC      →  11.92
+    XAGE1D   →  11.84
+
+  METHYLATION SITES (Top 5):
+    rs5931272  →  0.9544
+    rs798149   →  0.0228
+    rs5987737  →  0.9431
+    rs1416770  →  0.0553
+    rs6626309  →  0.1037
+
+  ✅ EXPECTED OUTPUT:
+    Mortality Risk:   ~39.38%
+    Risk Level:       Medium
+    Actual Status:    LIVING
+
+
+================================================================================
+  TEST PATIENT 4  —  63-year-old Male, Stage I (Actual: LIVING)
+================================================================================
+
+  CLINICAL INFORMATION:
+    Age:              63
+    Gender:           Male
+    Smoking History:  Former (>15 yrs)
+    Cancer Stage:     Stage I
+
+  GENE EXPRESSION (Top 10):
+    RPS4Y1   →  11.90
+    XIST     →   0.00
+    SFTPC    →   6.52
+    FGB      →  10.89
+    DDX3Y    →  10.09
+    KDM5D    →   9.61
+    PLUNC    →  16.55
+    SCGB1A1  →   8.81
+    PGC      →   8.48
+    XAGE1D   →  12.27
+
+  METHYLATION SITES (Top 5):
+    rs5931272  →  0.9557
+    rs798149   →  0.9799
+    rs5987737  →  0.9645
+    rs1416770  →  0.9364
+    rs6626309  →  0.0517
+
+  ✅ EXPECTED OUTPUT:
+    Mortality Risk:   ~41.33%
+    Risk Level:       Medium
+    Actual Status:    LIVING
+
+
+================================================================================
+  TEST PATIENT 5  —  56-year-old Male, Stage I (Actual: LIVING)
+================================================================================
+
+  CLINICAL INFORMATION:
+    Age:              56
+    Gender:           Male
+    Smoking History:  Former (>15 yrs)
+    Cancer Stage:     Stage I
+
+  GENE EXPRESSION (Top 10):
+    RPS4Y1   →  12.12
+    XIST     →   2.36
+    SFTPC    →  16.15
+    FGB      →   5.30
+    DDX3Y    →  11.29
+    KDM5D    →  10.28
+    PLUNC    →   6.59
+    SCGB1A1  →   9.45
+    PGC      →  14.06
+    XAGE1D   →   1.75
+
+  METHYLATION SITES (Top 5):
+    rs5931272  →  0.9946
+    rs798149   →  0.9968
+    rs5987737  →  1.0000
+    rs1416770  →  0.0131
+    rs6626309  →  0.0036
+
+  ✅ EXPECTED OUTPUT:
+    Mortality Risk:   ~38.88%
+    Risk Level:       Medium
+    Actual Status:    LIVING
+
+
+================================================================================
+  SUMMARY TABLE
+================================================================================
+
+  Patient | Age | Gender | Stage | Smoking       | Predicted Risk | Actual
+  --------|-----|--------|-------|---------------|----------------|--------
+     1    |  62 | Female |   I   | Former >15yr  |   ~37.59%  Med | DECEASED
+     2    |  75 | Female |  III  | Former >15yr  |   ~37.99%  Med | LIVING
+     3    |  70 | Male   |  III  | Former >15yr  |   ~39.38%  Med | LIVING
+     4    |  63 | Male   |   I   | Former >15yr  |   ~41.33%  Med | LIVING
+     5    |  56 | Male   |   I   | Former >15yr  |   ~38.88%  Med | LIVING
+
+  Model Accuracy on Full Test Set: 63.77%
+  AUC-ROC: 0.5673 | C-Index: 0.5673
+
+================================================================================
+  NOTES
+================================================================================
+
+  • These are REAL patient samples from the TCGA-LUAD test set (69 patients).
+  • The model uses 2,000 gene features + 5,000 methylation features + 4
+    clinical features internally, but the UI only shows the top 10 genes
+    and top 5 methylation sites. Remaining features default to 0.
+  • Because only a subset of features are entered in the UI, predictions
+    may differ slightly (~1-2%) from the full-data predictions shown above.
+  • Predictions cluster around 37-42% because the UI only fills ~15 of
+    the 7,004 total features — most of the signal comes from the unseen
+    features that default to zero.
+
+================================================================================

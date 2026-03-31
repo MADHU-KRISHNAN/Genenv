@@ -21,6 +21,9 @@ export interface PredictionResult {
     risk_level: string;
     confidence: number;
     contributions: { feature: string; contribution: number }[];
+    input_mode: string;
+    features_provided: number;
+    features_total: number;
 }
 
 export interface ModelMetrics {
@@ -53,8 +56,24 @@ export interface SamplePatient {
     cpg_names: string[];
 }
 
+export interface TemplateData {
+    columns: string[];
+    example_row: (string | number)[];
+    total_features: number;
+    instructions: string;
+}
+
 export const predict = (data: PatientData) =>
     api.post<PredictionResult>('/api/predict', data);
+
+export const predictFile = (file: File) => {
+    const formData = new FormData();
+    formData.append('file', file);
+    return api.post<PredictionResult>('/api/predict-file', formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+        timeout: 60000,
+    });
+};
 
 export const getMetrics = () =>
     api.get<ModelMetrics>('/api/model-metrics');
@@ -70,3 +89,6 @@ export const getMetadata = () =>
 
 export const getSamplePatient = () =>
     api.get<SamplePatient>('/api/sample-patient');
+
+export const getTemplate = () =>
+    api.get<TemplateData>('/api/download-template');
